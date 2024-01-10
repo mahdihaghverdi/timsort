@@ -1,0 +1,148 @@
+\mode<presentation>
+
+\usepackage{color}
+\usepackage{tikz}
+\usepackage{caption}
+\usepackage{textpos}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% suppress navigation bar
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\beamertemplatenavigationsymbolsempty
+\setbeamercovered{transparent}
+\usecolortheme{default}
+%\setbeamertemplate{blocks}[rounded][shadow=false]
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%
+% official colors
+%%%%%%%%%%%%%%%%%
+\definecolor{uplightgrey}{RGB}{170,170,200}
+\definecolor{uporange}{RGB}{242,148,0}
+\definecolor{upgrey}{RGB}{153,159,158}
+\definecolor{uidarkgrey}{RGB}{64,64,64}
+\definecolor{uiblack}{RGB}{0,0,0}
+%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%
+% title colors
+%%%%%%%%%%%%%%
+\setbeamercolor{title}{fg=uiblack}
+\setbeamercolor{subtitle}{fg=uiblack}
+\setbeamercolor{author}{fg=uidarkgrey}
+\setbeamercolor{institute}{fg=uidarkgrey}
+\setbeamercolor{date}{fg=uidarkgrey}
+%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%
+% title fonts
+%%%%%%%%%%%%%
+%\setbeamerfont{framesubtitle}{size=\footnotesize}
+%\setbeamerfont{frametitle}{size=\large}
+%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% colors for specific (inner) elements
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamercolor{frametitle}{fg=uiblack}
+\setbeamercolor{frametitle ruler}{fg=uidarkgrey}
+%\setbeamercolor{block title}{fg=uidarkgrey}
+\setbeamercolor{item}{fg=uplightgrey}
+\setbeamercolor{section in toc}{fg=uidarkgrey}
+\setbeamercolor{subsection in toc}{fg=uidarkgrey,bg=white}
+\setbeamercolor{part title}{fg=uiblack}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% caption styling (table, figure etc.)
+%\DeclareCaptionFont{uidarkgrey}{\color{uidarkgrey}}
+%\DeclareCaptionFont{uporange}{\color{uporange}}
+%\captionsetup{labelfont={uporange},textfont={uidarkgrey}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% sub-/section styling in table of contents
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\setbeamertemplate{section in toc}{--  \inserttocsection}
+%\setbeamertemplate{subsection in toc}[default]
+%\AtBeginSection{\frame{\sectionpage}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+% footer colors
+%%%%%%%%%%%%%%%
+\setbeamercolor{footer-ruler}{fg=uidarkgrey,bg=white}
+\setbeamercolor{footer}{fg=uidarkgrey,bg=white}
+
+%\setbeamertemplate{section page}
+%{
+%  \begin{centering}
+%    \begin{beamercolorbox}[sep=12pt,center]{part title}
+%      \usebeamerfont{section title}\insertsection\par
+%    \end{beamercolorbox}
+%  \end{centering}
+%}
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% define and set header design
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\setbeamertemplate{frametitle}
+%{
+%  \vskip0.5cm
+%  \hbox{
+%  \begin{beamercolorbox}[leftskip=0.5cm,wd=\paperwidth,ht=0.75cm]{frametitle}
+%      \hbox{\insertframetitle}
+%  \end{beamercolorbox}}
+%  \vskip0.1cm
+%}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%
+% set begin section
+%%%%%%%%%%%%%%%%
+\AtBeginSection[]{
+    \begin{frame}
+    \vfill
+    \centering
+    \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{section page}
+        \usebeamerfont{title}%
+	    %\textit{\normalsize Chapter \thesection} \\ \medskip
+                {\color{black} \insertsectionhead}\par%
+    \end{beamercolorbox}
+    \vfill
+    \end{frame}
+}
+
+%\AtBeginSection{\frame{\sectionpage}}
+%\AtBeginSubsection{\frame{\subsectionpage}}
+
+%%%%%%%%%%%%%%%%
+% set the footer
+%%%%%%%%%%%%%%%%
+\defbeamertemplate*{footline}{}
+{
+  \leavevmode
+  \vskip1pt
+  \hbox{
+  \begin{beamercolorbox}[wd=0.3\paperwidth,ht=0.35cm,dp=2.25ex,left]{footer}
+	  \hspace*{0.8cm}\scriptsize{\insertshorttitle}
+  \end{beamercolorbox}
+
+  \begin{beamercolorbox}[wd=0.4\paperwidth,ht=0.35cm,dp=2.25ex,center]{footer}
+	\scriptsize{\insertsection}
+  \end{beamercolorbox}
+
+\begin{beamercolorbox}[wd=0.28\paperwidth,ht=0.35cm,dp=2.25ex,right]{footer}
+	\scriptsize{\insertframenumber{} / \inserttotalframenumber}
+	\hspace*{0.8cm}
+  \end{beamercolorbox}
+  }
+  \vskip0pt
+}
+%%%%%%%%%%%%%%%%
+
+\mode
+<all>

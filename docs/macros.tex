@@ -1,0 +1,115 @@
+% Persian specific
+\newcommand{\itmsep}[1]{\raggedleft\setlength\itemsep{#1}}
+\newcommand{\itemr}{\raggedleft\setlength\itemsep{3mm}}
+\newcommand{\fn}[2]{{\LR{\footnote[frame,#1]{{~\LR{#2}}}}}}
+\newcommand{\fnn}[1]{{\LR{\footnote[frame]{{~\LR{#1}}}}}}
+\newcommand{\m}[1]{\ensuremath{\mathnormal{#1}}}
+\newcommand{\mc}[1]{\ensuremath{\mathtt{#1}}}
+\newcommand{\scl}{\ensuremath{\Sigma^*}\xspace}
+\newcommand{\gcl}{\ensuremath{\Gamma^*}\xspace}
+\newcommand{\gin}{\ensuremath{\mathnormal{\in}}\xspace}
+%\newcommand{\gand}{\ensuremath{\mathnormal{\land}}\xspace}
+\newcommand{\gand}{\&\&\xspace}
+\newcommand{\alglr}{\LTR\ttfamily\small}
+\newcommand{\st}[1]{\ensuremath{\mathnormal{\{#1\}}}\xspace}
+\newcommand{\gst}[1]{\ensuremath{\mathnormal{\{\text{\texttt{#1}}\}}}\xspace}
+\newcommand{\cpp}{C++\xspace}
+\newcommand{\enc}[1]{\ensuremath{\mathnormal{\langle#1\rangle}}\xspace}
+\newcommand{\abo}[1]{\ensuremath{\mathnormal{O(#1)}}\xspace}
+\newcommand{\aso}[1]{\ensuremath{\mathnormal{o(#1)}}\xspace}
+\newcommand{\aom}[1]{\ensuremath{\mathnormal{\Omega(#1)}}\xspace}
+\newcommand{\ath}[1]{\ensuremath{\mathnormal{\Theta(#1)}}\xspace}
+\newcommand{\dom}[2]{\ensuremath{\mathnormal{\Big[ \dfrac{#1}{#2} \Big]}}\xspace}
+
+\newcommand{\Proc}[2]{\Statex \textbf{procedure} \textsc{#1}(#2)}
+\newcommand{\Func}[2]{\Statex \textbf{function} \textsc{#1}(#2)}
+\newcommand{\To}{\textbf{to}\xspace}
+
+\newcommand\pro{\ensuremath{\rightarrow}\xspace}
+\newcommand\der{\ensuremath{\Rightarrow}\xspace}
+\newcommand\ders{\ensuremath{\stackrel{\mbox{*}}{\Rightarrow}}\xspace}
+\newcommand{\dern}[1]{\ensuremath{\stackrel{\mbox{\small #1}}{\Rightarrow}}\xspace}
+\newcommand\move{\ensuremath{\vdash}\xspace}
+\newcommand\moves{\ensuremath{\stackrel{\small *}{\vdash}}\xspace}
+\newcommand{\movesn}[1]{\ensuremath{\stackrel{\small *}{\vdash_{#1}}}\xspace}
+\newcommand{\moven}[1]{\ensuremath{\mathnormal{\vdash_{#1}}}\xspace}
+
+\newcommand{\code}[1]{{\LR{\texttt{#1}}}}
+\newcommand{\txtlr}[1]{\text{\LR{#1}}}
+
+
+% Abbreviations
+\newcommand{\ie}{\latin{i.e.,~}}
+\newcommand{\eg}{\latin{e.g.,~}}
+\newcommand{\cf}{\latin{cf.~}}
+\newcommand{\etal}{\latin{et al.~}}
+\newcommand{\etc}{\unskip~\latin{etc.}\xspace}
+\newcommand{\apriori}{\latin{a priori}}
+\newcommand{\wrt}{\latin{w.r.t.~}}
+%\newtheorem{theorem}{Theorem}
+
+\newcommand\NN{\ensuremath{\mathbb{N}}\xspace}
+\newcommand\RR{\ensuremath{\mathbb{R}}\xspace}
+\newcommand\NNS{\ensuremath{\mathbb{N}^*}\xspace}
+\newcommand\NNZ{\ensuremath{\mathbb{N}\backslash\{0\}}\xspace}
+\newcommand\RRP{\ensuremath{\mathbb{R}^+}\xspace}
+\newcommand\vect[1]{\ensuremath{\boldsymbol{\vec{#1}}}}
+\newcommand\MP{\ensuremath{\mathcal{P}}\xspace}
+
+\newcommand\de{\mathrel{\bullet\mkern-2.5mu{\rightarrow}}}
+\newcommand\ue{\mathrel{\bullet\mkern-3mu{-}\mkern-3mu\bullet}}
+
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Res}{Res}
+%\DeclareMathOperator{\land}{and}
+
+\newcommand{\fl}[1]{\ensuremath{\lfloor #1 \rfloor}}
+\newcommand{\bfl}[1]{\ensuremath{\big\lfloor #1 \big\rfloor}}
+\newcommand{\Bfl}[1]{\ensuremath{\Big\lfloor #1 \Big\rfloor}}
+\newcommand{\bgfl}[1]{\ensuremath{\bigg\lfloor #1 \bigg\rfloor}}
+\newcommand{\Bgfl}[1]{\ensuremath{\Bigg\lfloor #1 \Bigg\rfloor}}
+
+\newcommand{\cl}[1]{\ensuremath{\lceil #1 \rceil}}
+\newcommand{\bcl}[1]{\ensuremath{\big\lceil #1 \big\rceil}}
+\newcommand{\Bcl}[1]{\ensuremath{\Big\lceil #1 \Big\rceil}}
+\newcommand{\bgcl}[1]{\ensuremath{\bigg\lceil #1 \bigg\rceil}}
+\newcommand{\Bgcl}[1]{\ensuremath{\Bigg\lceil #1 \Bigg\rceil}}
+
+\newcommand{\mtx}[1]{\begin{pmatrix} #1 \end{pmatrix}}
+\newcommand{\smtx}[1]{\begin{psmallmatrix} #1 \end{psmallmatrix}}
+
+\definecolor{commentgreen}{RGB}{2,112,10}
+\definecolor{eminence}{RGB}{108,48,130}
+\definecolor{brightmaroon}{rgb}{0.76, 0.13, 0.28}
+\definecolor{darkred}{rgb}{0.55, 0.0, 0.0}
+\lstset {
+    language=C++,
+    frame=tb,
+    tabsize=4,
+    showstringspaces=false,
+    numbers=left,
+    %upquote=true,
+    commentstyle=\color{commentgreen},
+    keywordstyle=\color{eminence},
+    stringstyle=\color{darkred},
+    basicstyle=\small\ttfamily, % basic font setting
+    emph={int,char,double,float,unsigned,long,short,void,bool},
+    emphstyle={\color{blue}},
+    %escapechar=\&,
+    % keyword highlighting
+    %classoffset=1, % starting new class
+    %otherkeywords={>,<,.,;,-,!,=,~},
+    %morekeywords={>,<,.,;,-,!,=,~},
+    %keywordstyle=\color{weborange},
+    %classoffset=0,
+}
+
+\makeatletter
+\NewDocumentCommand{\LeftComment}{s m}{%
+	\IfBooleanF{#1}{\hspace*{\ALG@thistlm}}\textcolor{commentgreen}{\(~\triangleright\) #2}}
+\makeatother
+
