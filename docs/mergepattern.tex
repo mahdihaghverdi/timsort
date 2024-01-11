@@ -8,11 +8,7 @@
 \m{m}
 یک آرایه‌ی جدید به طول
 \m{n + m}
-نیاز دارد و در کل برای ادغام ما چنین فضایی را اشغال کرده‌ایم:
-\begin{flushleft}
-\m{\underbrace{\m{n}}_{len(X)} + \underbrace{\m{m}}_{len(Y)} + \underbrace{\m{n + m}}_{\text{\lr{new array}}}}
-\end{flushleft}
-
+نیاز دارد،
 \item[-]
 اما تیم‌سورت برای \lr{inplace} مرتب کردن و کمتر کردن 
 \lr{space overhead}
@@ -83,7 +79,7 @@
 \textcolor{red}{\m{5}}, 
 21, 
 22, 
-\textcolor{blue}{\m{3}}, 
+3, 
 \mathcircled{\m{5}}, 17, 22, 107, 109]}\\
 \m{T = [\mathcircled{\m{12}}, 19, 21, 22]}
 \end{lfl}
@@ -114,8 +110,8 @@
 \textcolor{red}{\m{5}}, 
 \textcolor{red}{\m{12}}, 
 22, 
-\textcolor{blue}{\m{3}}, 
-\textcolor{blue}{\m{5}}, 
+3, 
+5, 
 \mathcircled{\m{17}}, 22, 107, 109]}\\
 \m{T = [
 \mathcircled{\m{12}}, 
@@ -153,8 +149,8 @@
 \textcolor{red}{\m{5}}, 
 \textcolor{red}{\m{12}}, 
 \textcolor{red}{\m{17}}, 
-\textcolor{blue}{\m{3}}, 
-\textcolor{blue}{\m{5}}, 
+3, 
+5, 
 \mathcircled{\m{17}}, 22, 107, 109]}\\
 \m{T = [
 \textcolor{blue}{\m{12}}, 
@@ -196,7 +192,7 @@
 \textcolor{red}{\m{12}}, 
 \textcolor{red}{\m{17}}, 
 \textcolor{red}{\m{19}}, 
-\textcolor{blue}{\m{5}}, 
+5, 
 \mathcircled{\m{22}}, 22, 107, 109]}\\
 \m{T = [
 \textcolor{blue}{\m{12}}, 
@@ -239,7 +235,8 @@
 \textcolor{red}{\m{17}}, 
 \textcolor{red}{\m{19}}, 
 \textcolor{red}{\m{21}}, 
-\textcolor{blue}{\m{17}}, \mathcircled{\m{22}}, 107, 109]}\\
+17,
+\mathcircled{\m{22}}, 107, 109]}\\
 \m{T = [
 \textcolor{blue}{\m{12}}, 
 \textcolor{blue}{\m{19}}, 
@@ -273,7 +270,7 @@
 \end{lfl}
 
 \item[-]
-که در اینجا عنصر ۲۲ آرایه‌ی موقت انتخاب می‌شود که برای حفظ پایداری الگوریتم مرتب‌ سازی است و ۲۲ای که زودتر آمده را انتخاب کند:
+که در اینجا عنصر ۲۲ آرایه‌ی موقت انتخاب می‌شود که برای حفظ پایداری الگوریتم مرتب‌ سازی لازم است که بیست و دویی که زودتر آمده را انتخاب کند:
 \begin{lfl}
 \m{A = [
 \textcolor{red}{\m{3}}, 
