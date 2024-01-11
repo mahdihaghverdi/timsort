@@ -206,3 +206,112 @@
 \end{lfl}
 \end{itemize}
 \end{frame}
+
+\begin{frame}{گام‌ها (ادامه)}
+\begin{itemize}\itemr
+\item[-]
+سپس:
+\begin{lfl}
+\m{A = [3, 
+5, 
+12, 
+17, 
+19, 
+\textcolor{blue}{\m{5}}, 
+\textcolor{blue}{\m{17}},
+\mathcircled{\m{22}},
+107,
+109]}\\
+\m{T = [
+\textcolor{blue}{\m{12}}, 
+\textcolor{blue}{\m{19}}, 
+\mathcircled{\m{21}}, 
+22]}
+\end{lfl}
+
+\item[-]
+که می‌شود:
+\begin{lfl}
+\m{A = [
+\textcolor{red}{\m{3}}, 
+\textcolor{red}{\m{5}}, 
+\textcolor{red}{\m{12}}, 
+\textcolor{red}{\m{17}}, 
+\textcolor{red}{\m{19}}, 
+\textcolor{red}{\m{21}}, 
+\textcolor{blue}{\m{17}}, \mathcircled{\m{22}}, 107, 109]}\\
+\m{T = [
+\textcolor{blue}{\m{12}}, 
+\textcolor{blue}{\m{19}}, 
+\mathcircled{\m{21}},
+22]}
+\end{lfl}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{گام‌ها (ادامه)}
+\begin{itemize}\itemr
+\item[-]
+سپس:
+\begin{lfl}
+\m{A = [3, 
+5, 
+12, 
+17, 
+19, 
+21, 
+\textcolor{blue}{\m{17}},
+\mathcircled{\m{22}},
+107,
+109]}\\
+\m{T = [
+\textcolor{blue}{\m{12}}, 
+\textcolor{blue}{\m{19}}, 
+\textcolor{blue}{\m{21}},
+\mathcircled{\m{22}}]
+}
+\end{lfl}
+
+\item[-]
+که در اینجا عنصر ۲۲ آرایه‌ی موقت انتخاب می‌شود که برای حفظ پایداری الگوریتم مرتب‌ سازی است و ۲۲ای که زودتر آمده را انتخاب کند:
+\begin{lfl}
+\m{A = [
+\textcolor{red}{\m{3}}, 
+\textcolor{red}{\m{5}}, 
+\textcolor{red}{\m{12}}, 
+\textcolor{red}{\m{17}}, 
+\textcolor{red}{\m{19}}, 
+\textcolor{red}{\m{21}}, 
+\textcolor{red}{\m{22}},
+22,
+107,
+109]}\\
+\m{T = [
+\textcolor{blue}{\m{12}}, 
+\textcolor{blue}{\m{19}}, 
+\textcolor{blue}{\m{21}},
+\mathcircled{\m{22}}]}
+\end{lfl}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{گام‌ها (ادامه)}
+\begin{itemize}\itemr
+\item[-]
+و حالا که عناصر آرایه‌ی موقت تمام شده، باقی عناصر باقی مانده سر جای خود هستند و دیگر مقایسه و جابجایی لازم نیست و آرایه به صورت مرتب ادغام شد:
+
+\begin{lfl}
+\m{A = [
+\textcolor{red}{\m{3}}, 
+\textcolor{red}{\m{5}}, 
+\textcolor{red}{\m{12}}, 
+\textcolor{red}{\m{17}}, 
+\textcolor{red}{\m{19}}, 
+\textcolor{red}{\m{21}}, 
+\textcolor{red}{\m{22}},
+\textcolor{red}{\m{22}},
+\textcolor{red}{\m{107}},
+\textcolor{red}{\m{109}}]}
+\end{lfl}
+\end{itemize}
+\end{frame}
