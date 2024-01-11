@@ -1,0 +1,34 @@
+\section{استفاده از \lr{stack} برای ادغام}
+\begin{frame}{ساختار \lr{\texttt{MergeState}}}
+\begin{itemize}\itemr
+\item[-]
+ساختاری در کد‌هایی که مربوط به الگوریتم تیم‌سورت پیدا می‌شود به اسم \lr{\texttt{MergeState}}؛ این ساختار اطلاعات مورد نیاز برای توابع ادغام را داراست.
+
+\item[-]
+اطلاعات دیگری که در این ساختار نگهداری می‌شوند:
+\begin{enumerate}\itemr
+\item 
+مقدار 
+\lr{\texttt{min\_gallop}}
+
+\item 
+اندازه‌ی استک \lr{Run}ها:
+\lr{\texttt{n}}
+
+\item 
+خود استک \lr{Run}ها:
+\lr{\texttt{pending}}
+
+\item 
+آرایه‌ی موقت ادغام کردن:
+\lr{\texttt{temparray}}
+
+\item 
+و سه تابع
+\lr{\texttt{key\_compare}}،
+\lr{\texttt{key\_richcompare}} و
+\lr{\texttt{tuple\_elem\_compare}}
+برای سناریو‌های مختلف مقایسه کردن بین عناصر آرایه.
+\end{enumerate}
+\end{itemize}
+\end{frame}
