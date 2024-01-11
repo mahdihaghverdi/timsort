@@ -315,3 +315,76 @@
 \end{lfl}
 \end{itemize}
 \end{frame}
+
+\begin{frame}{جهت ادغام}
+\begin{itemize}\itemr
+\item[-]
+در مثال قبلی \lr{Run} کوچک‌تر در سمت چپ بود و ما ادغام را از سمت چپ \lr{Run} بزرگ‌تر و آرایه‌ی موقت انجام دادیم، اما اگر چنین حالتی باشد:
+\begin{lfl}
+\m{A = [\, \underbrace{\m{3, 5, 17, 22, 107, 109}}_{\m{X}}, \, \underbrace{\m{12, 19, 21, 22}}_{\m{Y}} \,]}
+\end{lfl}
+
+\item[-]
+ما چنین چیزی داریم:
+\begin{lfl}
+\m{A = [3, 5, 17, 22, 107, 109, 12, 19, 21, 22]}\\
+\m{T = [12, 19, 21, 22]}
+\end{lfl}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{جهت ادغام (ادامه)}
+\begin{itemize}\itemr
+\item[-]
+در این حالت که 
+\lr{Run}
+کوچک‌تر در سمت راست بود، ما هم تمام ادغام را از سمت راست انجام می‌دهیم
+
+\begin{lfl}
+\m{A = [3, 5, 17, 22, 107, \mathcircled{\m{109}}, 12, 19, 21, 22]}\\
+\m{T = [
+12,
+19,
+21,
+\mathcircled{\m{22}}]}
+\end{lfl}
+
+\item[-]
+که می‌شود:
+\begin{lfl}
+\m{A = [3, 5, 17, 22, 107, \textcolor{blue}{109}, 12, 19, 21, \textcolor{red}{109}]}\\
+\m{T = [
+12,
+19,
+21,
+\mathcircled{\m{22}}]}
+\end{lfl}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{جهت ادغام (ادامه)}
+\begin{itemize}\itemr
+\item[-]
+و سپس:
+\begin{lfl}
+\m{A = [3, 5, 17, 22, \mathcircled{\m{107}}, \textcolor{blue}{109}, 12, 19, 21, 109]}\\
+\m{T = [
+12,
+19,
+21,
+\mathcircled{\m{22}}]}
+\end{lfl}
+
+\item[-]
+که می‌شود:
+\begin{lfl}
+\m{A = [3, 5, 17, 22, \textcolor{blue}{107}, \textcolor{blue}{109}, 12, 19, \textcolor{red}{107}, \textcolor{red}{109}]}\\
+\m{T = [
+12,
+19,
+21,
+\mathcircled{\m{22}}]}
+\end{lfl}
+و الی آخر...
+\end{itemize}
+\end{frame}
