@@ -19,6 +19,18 @@
 \usepackage{xurl}
 %----------------------------------------------------
 
+% circle in math mode
+\usepackage{mathtools}% superior to amsmath
+\usepackage{tikz}
+\makeatletter
+\newcommand\mathcircled[1]{%
+  \mathpalette\@mathcircled{#1}%
+}
+\newcommand\@mathcircled[2]{%
+  \tikz[baseline=(math.base)] \node[draw,circle,inner sep=1pt] (math) {$\m@th#1#2$};%
+}
+\makeatother
+
 \usefonttheme{serif}
 \usepackage{graphicx}
 \usepackage{amsfonts}
