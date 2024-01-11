@@ -24,11 +24,9 @@
 \begin{itemize}\itemr
 \item[-]
 اگر آرایه‌ای به این صورت داشته باشیم:
-\begin{latin}
-\begin{flushleft}
+\begin{lfl}
 \m{A = [\, \underbrace{\m{12, 19, 21, 22}}_{\m{X}}, \, \underbrace{\m{3, 5, 17, 22, 107, 109}}_{\m{Y}} \,]}
-\end{flushleft}
-\end{latin}
+\end{lfl}
 دو \lr{Run} عه 
 \m{X}
 و
@@ -38,19 +36,26 @@
 \item[-]
 در این روش جدید ادغام ما یک آرایه‌ی موقت به اندازه‌ی \lr{Run} کوچک‌تر درست می‌کنیم و عناصر \lr{Run} کوچک‌تر را در آن کپی می‌کنیم. کپی کردن‌های این چنین هم (یعنی یک تکه از یک آرایه) به بهینه‌ترین حالت در سطح پایین اجرا می‌شوند. پس حالا ما چنین چیزی داریم:
 
-\begin{latin}
-\begin{flushleft}
+\begin{lfl}
 \m{A = [12, 19, 21, 22, 3, 5, 17, 22, 107, 109]}\\
 \m{T = [12, 19, 21, 22]}
-\end{flushleft}
-\end{latin}
+\end{lfl}
 \end{itemize}
 \end{frame}
 
 \begin{frame}{بهتر کردن استفاده از فضا در ادغام (ادامه)}
 \begin{itemize}\itemr
 \item[-]
-حالا شروع به 
+چون آرایه‌ی کوچک‌تر سمت چپ بود، پس از سمت چپ‌ آرایه‌ی موقت و دومین \lr{Run} شروع به ادغام کردن می‌کنیم. که یعنی:
+\begin{lfl}
+\m{A = [12, 19, 21, 22, \mathcircled{\m{3}}, 5, 17, 22, 107, 109]}\\
+\m{T = [\mathcircled{\m{12}}, 19, 21, 22]}
+\end{lfl}
+را باهم مقایسه، و برنده (عنصر کوچک‌تر) را در ایندکس صفر آرایه‌ی \m{A} می‌گذاریم. که می‌شود:
+
+\begin{lfl}
+\m{A = [\textcolor{red}{\m{3}}, 19, 21, 22, \mathcircled{\m{3}}, 5, 17, 22, 107, 109]}\\
+\m{T = [\mathcircled{\m{12}}, 19, 21, 22]}
+\end{lfl}
 \end{itemize}
 \end{frame}
-
