@@ -52,3 +52,26 @@
 اگر بخواهیم ساده نگاه کنیم فرض می‌کنیم که خود \lr{Run} روی استک گذاشته می‌شود اما در واقع فقط آدرس شروع و اندازه‌ی آن روی استک ذخیره می‌شود تا از تکه تکه کردن آرایه و اشغال فضای بیشتر جلوگیری شود.
 \end{itemize}
 \end{frame}
+
+\begin{frame}{استکِ \lr{\texttt{pending}}}
+\begin{itemize}\itemr
+\item[-]
+این استک، نقاط شروع و طول هر \lr{Run} را در خودش ذخیره می‌کند.
+
+\item[-]
+این یعنی:
+
+\lr{Run} عه
+\lr{\texttt{i}}ام
+از آدرس
+\lr{\texttt{base[i]}}
+شروع شده،
+\lr{\texttt{len[i]}}
+تا ادامه دارد و این عبارت همیشه درست است:
+\begin{latin}
+\begin{flushleft}
+\texttt{pending[i].base + pending[i].len == pending[i+1].base}
+\end{flushleft}
+\end{latin}
+\end{itemize}
+\end{frame}
