@@ -2,19 +2,60 @@
 \begin{frame}{چرا تیم‌سورت؟}
 \begin{itemize}\itemr
 \item[-]
-پیچیدگی زمانی الگوریتم تیم‌سورت با الگوریتم‌های 
+مقایسه‌ی کلی بین پیچیدگی زمانی الگوریتم‌های 
 \lr{Merge sort}،
 \lr{Quick sort} و
 \lr{Heap sort}
-برابری می‌کند و برابر 
-\m{O(nlgn)}
-است.
-
+چنین چیزیست:
+\begin{latin}
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\textbf{Algorithm} &
+\textbf{Best Case} &
+\textbf{Avg. Case} &
+\textbf{Worst Case} &
+\textbf{Space} \\
+\hline
+\hline
+Quick Sort &
+\m{O(nlgn)} &
+\m{O(nlgn)} &
+\m{O(n^2)} &
+\m{O(lgn)} \\
+\hline
+Tim Sort &
+\m{O(n)} &
+\m{O(nlgn)} &
+\m{O(nlgn)} &
+\m{O(n)} \\
+\hline
+Merge Sort &
+\m{O(nlgn)} &
+\m{O(nlgn)} &
+\m{O(nlgn)} &
+\m{O(n)} \\
+\hline
+Heap Sort &
+\m{O(nlgn)} &
+\m{O(nlgn)} &
+\m{O(nlgn)} &
+\m{O(1)} \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+\end{latin}
 \item[-]
 اما این تحلیل کلی یک سری جزئیات راجع به پیچیدگی زمانی الگوریتم را پنهان می‌کند که آن پیچیدگی یک 
 \lr{constant factor}
 اثرگذار در میزان پیچیدگی الگوریتم است. (\m{c_f.nlgn})
+\end{itemize}
+\end{frame}
 
+\begin{frame}{چرا تیم‌سورت؟ (ادامه)}
+\begin{itemize}\itemr
 \item[-]
 برای مثال در الگوریتم \lr{Quick sort} انتخاب مقدار 
 \lr{left}،
@@ -33,7 +74,6 @@
 در آن نقض شده و پیشبینی‌های پردازنده‌ برای کش کردن داده‌ها را تضعیف می‌کند.
 \end{itemize}
 \end{frame}
-
 \begin{frame}{چرا تیم‌سورت؟ (ادامه)}
 \begin{center}
 {\Large \textbf{پس اگر بتوانیم این \lr{constant factor} را کاهش دهیم}}
