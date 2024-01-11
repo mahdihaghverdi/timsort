@@ -86,3 +86,22 @@
 برای داده‌های واقعی هم، ما چون \lr{Run}های نسبتا بلندی خواهیم داشت توانسته‌ایم کوتاه‌ترین درخت بازگشتی ادغام را داشته باشیم و در نتیجه تعداد ادغام‌ها را کم کنیم.
 \end{itemize}
 \end{frame}
+
+\begin{frame}{کدها}
+\begin{itemize}\itemr
+\item[-]
+پیدا کردن \lr{Run}ها در آرایه توسط تابع 
+\lr{\texttt{count\_run()}}\fn{1}{\url{https://github.com/python/cpython/blob/3.10/Objects/listobject.c\#L1316}}
+انجام می‌شود.
+\item[-]
+قسمتی که به \lr{Run}های اضافه شده، عنصر اضافه می‌کند تا به اندازه‌ی 
+\lr{\texttt{minrun}}
+برسند\fn{2}{\url{https://github.com/python/cpython/blob/3.10/Objects/listobject.c\#L2410}}:
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=\textwidth, height=0.5\textheight]{docs/images/force}
+\end{center}
+\end{figure}
+\end{itemize}
+\end{frame}
