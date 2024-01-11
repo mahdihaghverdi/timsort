@@ -75,3 +75,77 @@
 \end{latin}
 \end{itemize}
 \end{frame}
+
+\begin{frame}{شروط استکِ \lr{\texttt{pending}}}
+\begin{itemize}\itemr
+\item[-]
+برای اینکه اندازه‌ی \lr{Run}ها دقیقا و یا تقریبا با هم برابر بمانند تا الگوریتم‌های ادغام آنها را سریع‌تر ادغام کنند، هر بار که یک \lr{Run} جدیدی ساخته می‌شود اطلاعات آن روی استک گذاشته می‌شود، دو شرط برای \lr{Run}های روی استک چک می‌شوند.
+
+\item[-]
+اگر روی استک ما 
+\lr{Run}های
+\m{X}،
+\m{Y} و
+\m{Z}
+وجود داشته باشند، این شروط باید حفظ شوند:
+\begin{enumerate}\itemr
+\item 
+\m{|Z| > |Y| + |X|}
+\item 
+\m{|Y| > |X|}
+\end{enumerate}
+\item[-]
+شرط دوم بر این دلالت دارد که اندازه‌ی 
+\lr{Run}ها
+از بالا به پایین به صورت صعودی باشد و
+
+\item[-]
+شرط اول بر این دلالت دارد که وقتی از بالا به پایین می‌رویم طول \lr{Run}ها حداقل با سرعت دنباله‌ی فیبوناچی رشد کنند.
+\item[-]
+اگر هر کدام از این شروط نقض بشوند، 
+\lr{Run} عه
+\m{Y}
+با \lr{Run} کوچک‌تر از بین 
+\m{X}
+یا 
+\m{Z}
+ادغام می‌شود و شروط دوباره چک می‌شوند و اگر برقرار بودند، الگوریتم به دنبال 
+\lr{Run}
+بعدی در آرایه جستجو می‌کند.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{شروط استکِ \lr{\texttt{pending}} (ادامه)}
+\begin{itemize}\itemr
+\item[-]
+اگر
+\m{|Z| \leq |Y| + |X|}
+هر کدام از \m{X} یا \m{Z} که کوچک‌تر باشند، با \m{Y} ادغام می‌شوند (که الگوریتم ترجیح می‌دهد \m{X} را بخاطر اینکه در کش تازگی دارد را ادغام کند.)
+
+\item[-]
+برای مثال اگر این \lr{Run}ها را داشته باشیم:
+\m{\left\langle Z:30 \quad Y:20 \quad X:10\right\rangle}،
+\m{Y}
+با
+\m{X}
+ادغام می‌شود:
+\begin{lfl}
+\m{\left\langle Z:30 \quad YX:30\right\rangle}
+\end{lfl}
+
+\item[-]
+و یا اگر
+\m{\left\langle Z:500 \quad Y:400 \quad X:1000\right\rangle}،
+\m{Y}
+با
+\m{Z}
+ادغام می‌شود:
+\begin{lfl}
+\m{\left\langle ZY:900 \quad C:1000\right\rangle}
+\end{lfl}
+
+که در هر دو مثال شرط دوم نقض می‌شود و تابع 
+\lr{\texttt{merge\_collapse}}\fn{1}{\url{https://github.com/python/cpython/blob/3.10/Objects/listobject.c\#L1955}}
+آنقدر ادامه می‌دهد تا شروط حفظ بشوند.
+\end{itemize}
+\end{frame}
