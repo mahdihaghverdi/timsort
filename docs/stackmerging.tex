@@ -98,6 +98,7 @@
 \item 
 \m{|Y| > |X|}
 \end{enumerate}
+\vspace{-18pt}
 \item[-]
 شرط دوم بر این دلالت دارد که اندازه‌ی 
 \lr{Run}ها
@@ -148,8 +149,41 @@
 \m{\left\langle ZY:900 \quad C:1000\right\rangle}
 \end{lfl}
 
-که در هر دو مثال شرط دوم نقض می‌شود و تابع 
-\lr{\texttt{merge\_collapse}}\fn{1}{\url{https://github.com/python/cpython/blob/3.10/Objects/listobject.c\#L1955}}
-آنقدر ادامه می‌دهد تا شروط حفظ بشوند.
+که در هر دو مثال شرط دوم نقض می‌شود و الگوریتم تا زمانی که این دو شرط درست شوند، ادامه می‌دهد.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{کدها}
+\begin{itemize}\itemr
+\item[-]
+تابع 
+\lr{\texttt{merge\_collapse()}}
+\fn{1}{\url{https://github.com/python/cpython/blob/3.10/Objects/listobject.c\#L1955}}
+مدیریت این شروط را به عهده دارد و انتخاب می‌کند که کدام \lr{Run}ها با هم ادغام شوند و این کار را با تابع 
+\lr{\texttt{merge\_at()}}
+انجام می‌دهد.
+
+\item[-]
+تابع
+\lr{\texttt{merge\_at()}}
+\fn{2}{\url{https://github.com/python/cpython/blob/3.10/Objects/listobject.c\#L1891}}
+عمل ادغام تصمیمات مبنی بر اینکه ادغام باید با \lr{galloping} شود یا نشود را از نتایج توابع \lr{galloping} اتخاذ و عملیات ادغام با توجه به شرایط را با کمک توابع
+\lr{\texttt{merge\_lo()}}
+\fn{3}{\url{https://github.com/python/cpython/blob/3.10/Objects/listobject.c\#L1620}}
+و
+\lr{\texttt{merge\_hi()}}
+\fn{4}{\url{https://github.com/python/cpython/blob/3.10/Objects/listobject.c\#L1751}}
+انجام می‌دهد.
+
+\item[-]
+و در نهایت اولین تابعی که موقع صدا زده شدن 
+\lr{\texttt{list.sort()}}
+در سطح مفسر صدا زده می‌شود تابع
+\lr{\texttt{PyList\_Sort()}}
+\fn{5}{\url{https://github.com/python/cpython/blob/3.10/Objects/listobject.c\#L2483}}
+است که تابع پیاده‌سازی آن که تابع
+\lr{\texttt{list\_sort\_impl()}}
+\fn{6}{\url{https://github.com/python/cpython/blob/3.10/Objects/listobject.c\#L2221}}
+را صدا می‌زند.
 \end{itemize}
 \end{frame}
