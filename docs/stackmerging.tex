@@ -125,8 +125,18 @@
 \item[-]
 اگر
 \m{|Z| \leq |Y| + |X|}
-هر کدام از \m{X} یا \m{Z} که کوچک‌تر باشند، با \m{Y} ادغام می‌شوند (که الگوریتم ترجیح می‌دهد \m{X} را بخاطر اینکه در کش تازگی دارد را ادغام کند.)
+هر کدام از \m{X} یا \m{Z} که کوچک‌تر باشند، با \m{Y} ادغام می‌شوند (که الگوریتم \m{X} را ترجیح می‌دهد؛ بخاطر اینکه در کش تازگی دارد.)
 
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.5\textwidth, height=0.5\textheight]{docs/images/merge}
+\end{center}
+\end{figure}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{شروط استکِ \lr{\texttt{pending}} (ادامه)}
+\begin{itemize}\itemr
 \item[-]
 برای مثال اگر این \lr{Run}ها را داشته باشیم:
 \m{\left\langle Z:30 \quad Y:20 \quad X:10\right\rangle}،
@@ -149,9 +159,15 @@
 \m{\left\langle ZY:900 \quad C:1000\right\rangle}
 \end{lfl}
 
-که در هر دو مثال شرط دوم نقض می‌شود و الگوریتم تا زمانی که این دو شرط درست شوند، ادامه می‌دهد.
+که در هر دو مثال شرط دوم نقض می‌شود و الگوریتم تا زمانی که این دو شرط درست شوند، به ادغام کردن ادامه می‌دهد.
+
+\item[-]
+و در نهایت، تنها یک 
+\lr{Run}
+روی استک باقی می‌ماند که آرایه‌ی مرتب شده‌ی ماست.
 \end{itemize}
 \end{frame}
+
 
 \begin{frame}{کدها}
 \begin{itemize}\itemr
@@ -174,16 +190,5 @@
 \lr{\texttt{merge\_hi()}}
 \fn{4}{\url{https://github.com/python/cpython/blob/3.10/Objects/listobject.c\#L1751}}
 انجام می‌دهد.
-
-\item[-]
-و در نهایت اولین تابعی که موقع صدا زده شدن 
-\lr{\texttt{list.sort()}}
-در سطح مفسر صدا زده می‌شود تابع
-\lr{\texttt{PyList\_Sort()}}
-\fn{5}{\url{https://github.com/python/cpython/blob/3.10/Objects/listobject.c\#L2483}}
-است که تابع پیاده‌سازی آن که تابع
-\lr{\texttt{list\_sort\_impl()}}
-\fn{6}{\url{https://github.com/python/cpython/blob/3.10/Objects/listobject.c\#L2221}}
-را صدا می‌زند.
 \end{itemize}
 \end{frame}
