@@ -33,7 +33,8 @@
 در این روش جدید ادغام ما یک آرایه‌ی موقت به اندازه‌ی \lr{Run} کوچک‌تر درست می‌کنیم و عناصر \lr{Run} کوچک‌تر را در آن کپی می‌کنیم. کپی کردن‌های این چنین هم (یعنی یک تکه از یک آرایه) به بهینه‌ترین حالت در سطح پایین اجرا می‌شوند. پس حالا ما چنین چیزی داریم:
 
 \begin{lfl}
-\m{A = [12, 19, 21, 22, 3, 5, 17, 22, 107, 109]}\\
+\m{A = [\,\underbrace{\m{12, 19, 21, 22}}_{\m{X
+}}, \underbrace{\m{3, 5, 17, 22, 107, 109}}_{\m{Y}}\,]}\\
 \m{T = [12, 19, 21, 22]}
 \end{lfl}
 \end{itemize}
@@ -62,7 +63,7 @@
 سپس:
 \begin{lfl}
 \m{A = [
-3, 
+\textcolor{red}{3}, 
 19, 
 21, 
 22, 
@@ -79,7 +80,7 @@
 \textcolor{red}{\m{5}}, 
 21, 
 22, 
-3, 
+\textcolor{blue}{\m{3}}, 
 \mathcircled{\m{5}}, 17, 22, 107, 109]}\\
 \m{T = [\mathcircled{\m{12}}, 19, 21, 22]}
 \end{lfl}
@@ -92,8 +93,8 @@
 سپس:
 \begin{lfl}
 \m{A = [
-3, 
-5,
+\textcolor{red}{3}, 
+\textcolor{red}{5},
 21, 
 22, 
 \textcolor{blue}{\m{3}}, 
@@ -110,8 +111,8 @@
 \textcolor{red}{\m{5}}, 
 \textcolor{red}{\m{12}}, 
 22, 
-3, 
-5, 
+\textcolor{blue}{\m{3}}, 
+\textcolor{blue}{\m{5}}, 
 \mathcircled{\m{17}}, 22, 107, 109]}\\
 \m{T = [
 \mathcircled{\m{12}}, 
@@ -127,9 +128,10 @@
 \item[-]
 سپس:
 \begin{lfl}
-\m{A = [3, 
-5, 
-12, 
+\m{A = [
+\textcolor{red}{\m{3}}, 
+\textcolor{red}{\m{5}}, 
+\textcolor{red}{\m{12}}, 
 22, 
 \textcolor{blue}{\m{3}}, 
 \textcolor{blue}{\m{5}}, 
@@ -149,8 +151,8 @@
 \textcolor{red}{\m{5}}, 
 \textcolor{red}{\m{12}}, 
 \textcolor{red}{\m{17}}, 
-3, 
-5, 
+\textcolor{blue}{\m{3}}, 
+\textcolor{blue}{\m{5}}, 
 \mathcircled{\m{17}}, 22, 107, 109]}\\
 \m{T = [
 \textcolor{blue}{\m{12}}, 
@@ -166,10 +168,11 @@
 \item[-]
 سپس:
 \begin{lfl}
-\m{A = [3, 
-5, 
-12, 
-17, 
+\m{A = [
+\textcolor{red}{\m{3}}, 
+\textcolor{red}{\m{5}}, 
+\textcolor{red}{\m{12}}, 
+\textcolor{red}{\m{17}}, 
 \textcolor{blue}{\m{3}}, 
 \textcolor{blue}{\m{5}}, 
 \textcolor{blue}{\m{17}},
@@ -192,7 +195,8 @@
 \textcolor{red}{\m{12}}, 
 \textcolor{red}{\m{17}}, 
 \textcolor{red}{\m{19}}, 
-5, 
+\textcolor{blue}{\m{5}}, 
+\textcolor{blue}{\m{17}},
 \mathcircled{\m{22}}, 22, 107, 109]}\\
 \m{T = [
 \textcolor{blue}{\m{12}}, 
@@ -208,16 +212,15 @@
 \item[-]
 سپس:
 \begin{lfl}
-\m{A = [3, 
-5, 
-12, 
-17, 
-19, 
+\m{A = [
+\textcolor{red}{\m{3}}, 
+\textcolor{red}{\m{5}}, 
+\textcolor{red}{\m{12}}, 
+\textcolor{red}{\m{17}}, 
+\textcolor{red}{\m{19}}, 
 \textcolor{blue}{\m{5}}, 
-\textcolor{blue}{\m{17}},
-\mathcircled{\m{22}},
-107,
-109]}\\
+\textcolor{blue}{\m{17}}, 
+\mathcircled{\m{22}}, 22, 107, 109]}\\
 \m{T = [
 \textcolor{blue}{\m{12}}, 
 \textcolor{blue}{\m{19}}, 
@@ -235,7 +238,7 @@
 \textcolor{red}{\m{17}}, 
 \textcolor{red}{\m{19}}, 
 \textcolor{red}{\m{21}}, 
-17,
+\textcolor{blue}{\m{17}}, 
 \mathcircled{\m{22}}, 107, 109]}\\
 \m{T = [
 \textcolor{blue}{\m{12}}, 
@@ -251,12 +254,13 @@
 \item[-]
 سپس:
 \begin{lfl}
-\m{A = [3, 
-5, 
-12, 
-17, 
-19, 
-21, 
+\m{A = [
+\textcolor{red}{\m{3}}, 
+\textcolor{red}{\m{5}}, 
+\textcolor{red}{\m{12}}, 
+\textcolor{red}{\m{17}}, 
+\textcolor{red}{\m{19}}, 
+\textcolor{red}{\m{21}}, 
 \textcolor{blue}{\m{17}},
 \mathcircled{\m{22}},
 107,
@@ -295,6 +299,24 @@
 \begin{frame}{گام‌ها (ادامه)}
 \begin{itemize}\itemr
 \item[-]
+وضعیت کنونی ادغام:
+\begin{lfl}
+\m{A = [
+\textcolor{red}{\m{3}}, 
+\textcolor{red}{\m{5}}, 
+\textcolor{red}{\m{12}}, 
+\textcolor{red}{\m{17}}, 
+\textcolor{red}{\m{19}}, 
+\textcolor{red}{\m{21}}, 
+\textcolor{red}{\m{22}}, 
+\mathcircled{\m{22}}, 22, 107, 109]}\\
+\m{T = [
+\textcolor{blue}{\m{12}}, 
+\textcolor{blue}{\m{19}}, 
+\textcolor{blue}{\m{21}}, 
+\textcolor{blue}{\m{22}}]}
+\end{lfl}
+\item[-]
 و حالا که عناصر آرایه‌ی موقت تمام شده، باقی عناصر باقی مانده سر جای خود هستند و دیگر مقایسه و جابجایی لازم نیست و آرایه به صورت مرتب ادغام شد:
 
 \begin{lfl}
@@ -324,7 +346,7 @@
 \item[-]
 ما چنین چیزی داریم:
 \begin{lfl}
-\m{A = [3, 5, 17, 22, 107, 109, 12, 19, 21, 22]}\\
+\m{A = [\,\underbrace{\m{3, 5, 17, 22, 107, 109}}_{\m{X}}, \underbrace{\m{12, 19, 21, 22}}_{\m{Y}}\,]}\\
 \m{T = [12, 19, 21, 22]}
 \end{lfl}
 \end{itemize}
@@ -349,7 +371,7 @@
 \item[-]
 که می‌شود:
 \begin{lfl}
-\m{A = [3, 5, 17, 22, 107, \textcolor{blue}{109}, 12, 19, 21, \textcolor{red}{109}]}\\
+\m{A = [3, 5, 17, 22, 107, \mathcircled{\m{109}}, 12, 19, 21, \textcolor{red}{109}]}\\
 \m{T = [
 12,
 19,
@@ -364,7 +386,7 @@
 \item[-]
 و سپس:
 \begin{lfl}
-\m{A = [3, 5, 17, 22, \mathcircled{\m{107}}, \textcolor{blue}{109}, 12, 19, 21, 109]}\\
+\m{A = [3, 5, 17, 22, \mathcircled{\m{107}}, \textcolor{blue}{109}, 12, 19, 21, \textcolor{red}{109}]}\\
 \m{T = [
 12,
 19,
